@@ -36,7 +36,7 @@
 #include "../../ui_api.h"
 
 #define DEVICE_NAME             "Anycubic Kobra Max"
-#define FIRMWARE_VER            "Kobra Max V2.8.7"
+#define FIRMWARE_VER            "Kobra Max LA1.0"
 #define BUILD_VOLUME            "400*400*450 (mm)"
 #define TECH_SUPPORT            "https://www.anycubic.com"
 
