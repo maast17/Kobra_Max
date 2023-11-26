@@ -32,6 +32,7 @@
 
 #if ENABLED(ANYCUBIC_LCD_DGUS)
 
+#include "dgus_tft_defs.h"
 #include "dgus_tft.h"
 #include "dgus_Tunes.h"
 #include "dgus_FileNavigator.h"
@@ -42,6 +43,8 @@
 //#include "../../../../libs/build_date.h"
 #include "../../../../MarlinCore.h"
 #include "../../../../feature/powerloss.h"
+#include "../../module/printcounter.h"
+//#include "../../module/planner.h"
 
 namespace Anycubic {
 

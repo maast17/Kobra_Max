@@ -250,6 +250,11 @@ PGMSTR(SP_X_LBL, " X:"); PGMSTR(SP_Y_LBL, " Y:"); PGMSTR(SP_Z_LBL, " Z:"); PGMST
 volatile MarlinState marlin_state = MF_INITIALIZING;
 volatile HomingState homing_state = NOT_HOMING;
 
+// Define gcodeComment - MEL_MOD malebuffy
+const char * gcodeComment = "G-Code Status Area";
+bool activeFilamentChange = false;// MEL_MOD flag for M600 test
+bool mel_PrintAbort = false;// so we don't count aborted prints MEL_MOD
+
 // For M109 and M190, this flag may be cleared (by M108) to exit the wait loop
 bool wait_for_heatup = true;
 
@@ -979,17 +984,17 @@ inline void tmc_standby_setup() {
  *  - Print startup messages and diagnostics
  *  - Get EEPROM or default settings
  *  - Initialize managers for:
- *    â€?temperature
- *    â€?planner
- *    â€?watchdog
- *    â€?stepper
- *    â€?photo pin
- *    â€?servos
- *    â€?LCD controller
- *    â€?Digipot I2C
- *    â€?Z probe sled
- *    â€?status LEDs
- *    â€?Max7219
+ *    ï¿½?temperature
+ *    ï¿½?planner
+ *    ï¿½?watchdog
+ *    ï¿½?stepper
+ *    ï¿½?photo pin
+ *    ï¿½?servos
+ *    ï¿½?LCD controller
+ *    ï¿½?Digipot I2C
+ *    ï¿½?Z probe sled
+ *    ï¿½?status LEDs
+ *    ï¿½?Max7219
  */
 void setup() {
 
